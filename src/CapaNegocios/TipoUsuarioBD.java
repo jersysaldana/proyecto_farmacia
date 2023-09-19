@@ -42,7 +42,6 @@ public class TipoUsuarioBD {
                 registros[0] = rs.getString("idtipousuario");
                 registros[1] = rs.getString("tuNombre");
 
-
                 tabla_temporal.addRow(registros);
             }
             return tabla_temporal;
@@ -53,7 +52,6 @@ public class TipoUsuarioBD {
         }
     }
 
-  
     public boolean modificarTipoUsuario(TipoUsuario tu) {
 
         sql = "UPDATE tipousuario SET tuNombre=? WHERE idtipousuario=?";
@@ -79,7 +77,7 @@ public class TipoUsuarioBD {
         try {
             PreparedStatement pst = cn.prepareStatement(sql);
             pst.setInt(1, tu.getIdtipousuario());
-            
+
             pst.executeUpdate();
 
         } catch (Exception e) {
@@ -90,7 +88,7 @@ public class TipoUsuarioBD {
     }
 
     public boolean registrarTipoUsuario(TipoUsuario tu) {
- sql = "INSERT INTO tipousuario(idtipousuario,tuNombre) VALUES(0,?)";
+        sql = "INSERT INTO tipousuario(idtipousuario,tuNombre) VALUES(null,?)";
         try {
             PreparedStatement pst = cn.prepareStatement(sql);
             pst.setString(1, tu.getTuNombre());
@@ -98,6 +96,7 @@ public class TipoUsuarioBD {
             pst.executeUpdate();
 
             return true;
+
         } catch (Exception e) {
 
             JOptionPane.showMessageDialog(null, e, "PROBLEMAS  AL REGISTRAR ", JOptionPane.ERROR_MESSAGE);

@@ -41,8 +41,8 @@ public class TipoUsuario_IU extends javax.swing.JInternalFrame {
     }
 
     public void limpiar() {
-        txtCodigo.setText(" ");
-        txtNombre.setText(" ");
+        txtCodigo.setText("");
+        txtNombre.setText("");
         txtNombre.requestFocus();
     }
 
@@ -71,7 +71,6 @@ public class TipoUsuario_IU extends javax.swing.JInternalFrame {
         txtCantidad = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabla_reporte_TipoUsuario = new javax.swing.JTable();
-        btnRegistrar = new javax.swing.JButton();
         btnModificar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -80,6 +79,7 @@ public class TipoUsuario_IU extends javax.swing.JInternalFrame {
         btnCerrar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
+        btnRegistrar = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -108,14 +108,6 @@ public class TipoUsuario_IU extends javax.swing.JInternalFrame {
             }
         });
         jScrollPane1.setViewportView(tabla_reporte_TipoUsuario);
-
-        btnRegistrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/guardar.png"))); // NOI18N
-        btnRegistrar.setText("REGISTRAR");
-        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegistrarActionPerformed(evt);
-            }
-        });
 
         btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/lapiz.png"))); // NOI18N
         btnModificar.setText("MODIFICAR");
@@ -150,6 +142,19 @@ public class TipoUsuario_IU extends javax.swing.JInternalFrame {
 
         jLabel2.setText("NOMBRE");
 
+        txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNombreKeyPressed(evt);
+            }
+        });
+
+        btnRegistrar.setText("REGISTRAR");
+        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -172,7 +177,7 @@ public class TipoUsuario_IU extends javax.swing.JInternalFrame {
                         .addComponent(txtCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnRegistrar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(45, 45, 45)
                         .addComponent(btnModificar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnEliminar)
@@ -200,67 +205,40 @@ public class TipoUsuario_IU extends javax.swing.JInternalFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnRegistrar)
                     .addComponent(btnModificar)
                     .addComponent(btnEliminar)
                     .addComponent(btnLimpiar)
-                    .addComponent(btnCerrar))
+                    .addComponent(btnCerrar)
+                    .addComponent(btnRegistrar))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        // TODO add your handling code here:
-        if (txtNombre.getText().length() > 0) {
-            if (txtCodigo.getText().length() == 0) {
-                TipoUsuario oTipoUsuario = new TipoUsuario();
-                TipoUsuarioBD oTipoUsuarioBD = new TipoUsuarioBD();
-
-                oTipoUsuario.setTuNombre(txtNombre.getText().trim().toUpperCase());
-                boolean rpta = oTipoUsuarioBD.registrarTipoUsuario(oTipoUsuario);
-
-                if (rpta) {
-                    exito("Se registro correctamente");
-                    reportar();
-                    limpiar();
-                } else {
-                    error("Tienes problemas al registrar");
-                }
-            } else {
-                error("No puede registrar porque ya existe...");
-            }
-        } else {
-            error("Ingrese el nombre");
-            txtNombre.requestFocus();
-        }
-
-    }//GEN-LAST:event_btnRegistrarActionPerformed
-
     private void tabla_reporte_TipoUsuarioMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabla_reporte_TipoUsuarioMousePressed
         // TODO add your handling code here:
-        if (evt.getClickCount()==2) {
-            int fila_seleccionada=tabla_reporte_TipoUsuario.getSelectedRow();
-            
-            txtCodigo.setText(tabla_reporte_TipoUsuario.getValueAt(fila_seleccionada,0).toString());
-            txtNombre.setText(tabla_reporte_TipoUsuario.getValueAt(fila_seleccionada,1).toString());
-            
+        if (evt.getClickCount() == 2) {
+            int fila_seleccionada = tabla_reporte_TipoUsuario.getSelectedRow();
+
+            txtCodigo.setText(tabla_reporte_TipoUsuario.getValueAt(fila_seleccionada, 0).toString());
+            txtNombre.setText(tabla_reporte_TipoUsuario.getValueAt(fila_seleccionada, 1).toString());
+
         }
     }//GEN-LAST:event_tabla_reporte_TipoUsuarioMousePressed
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
         // TODO add your handling code here:
-              if (txtCodigo.getText().length() > 0) {
-            if (txtNombre.getText().length()> 0) {
+        if (txtCodigo.getText().length() > 0) {
+            if (txtNombre.getText().length() > 0) {
                 TipoUsuario oTipoUsuario = new TipoUsuario();
                 TipoUsuarioBD oTipoUsuarioBD = new TipoUsuarioBD();
-                
+
                 oTipoUsuario.setIdtipousuario(Integer.parseInt(txtCodigo.getText().trim()));
                 oTipoUsuario.setTuNombre(txtNombre.getText().trim().toUpperCase());
-                
+
                 boolean rpta = oTipoUsuarioBD.modificarTipoUsuario(oTipoUsuario);
-                
+
                 if (rpta) {
                     exito("Se modifico correctamente");
                     reportar();
@@ -280,25 +258,25 @@ public class TipoUsuario_IU extends javax.swing.JInternalFrame {
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         // TODO add your handling code here:
-        if (txtCodigo.getText().length()>0) {
+        if (txtCodigo.getText().length() > 0) {
             int aviso = JOptionPane.showConfirmDialog(rootPane, "Estas seguro de eliminar");
-            if (aviso==0) {
-                int codigo =Integer.parseInt(txtCodigo.getText().trim());
+            if (aviso == 0) {
+                int codigo = Integer.parseInt(txtCodigo.getText().trim());
                 TipoUsuarioBD oTipoUsuarioBD = new TipoUsuarioBD();
-                TipoUsuario oTipoUsuario=new TipoUsuario();
-                
+                TipoUsuario oTipoUsuario = new TipoUsuario();
+
                 oTipoUsuario.setIdtipousuario(codigo);
                 boolean rpta = oTipoUsuarioBD.eliminarTipoUsuario(oTipoUsuario);
-                
+
                 if (rpta) {
                     exito("Se elimino correctamente");
                     reportar();
                     limpiar();
                 } else {
                     error("Hay problemas...");
-                }                
+                }
             }
-            
+
         } else {
             error("Falta codigo");
         }
@@ -306,8 +284,42 @@ public class TipoUsuario_IU extends javax.swing.JInternalFrame {
 
     private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
         // TODO add your handling code here:
-         dispose();
+        dispose();
     }//GEN-LAST:event_btnCerrarActionPerformed
+
+    private void txtNombreKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyPressed
+        // TODO add your handling code here: 
+        if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER) {
+            btnRegistrar.requestFocus();
+            btnRegistrar.doClick();
+        }
+    }//GEN-LAST:event_txtNombreKeyPressed
+
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+        if (txtNombre.getText().length() > 0) {
+            if (txtCodigo.getText().length() == 0) {
+
+                TipoUsuario oTipoUsuario = new TipoUsuario();
+                TipoUsuarioBD oTipoUsuarioBD = new TipoUsuarioBD();
+
+                oTipoUsuario.setTuNombre(txtNombre.getText().trim().toUpperCase());
+
+                boolean rpta = oTipoUsuarioBD.registrarTipoUsuario(oTipoUsuario);
+                if (rpta) {     
+                    exito("Se Registro Correctamente...");
+                    reportar();
+                    limpiar();
+                } else {
+                    error("Tienes Problemas Al Registrar");
+                }
+            } else {
+                error("No Puedes Registrar Porque Ya Existe");
+            }
+        } else {
+            error("Ingrese Nombre");
+            txtNombre.requestFocus();
+        }
+    }//GEN-LAST:event_btnRegistrarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

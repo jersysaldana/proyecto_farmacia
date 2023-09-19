@@ -334,6 +334,11 @@ public class Usuario_IU extends javax.swing.JInternalFrame {
                 btnRegistrarActionPerformed(evt);
             }
         });
+        btnRegistrar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                btnRegistrarKeyPressed(evt);
+            }
+        });
 
         btnModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/report_edit.png"))); // NOI18N
         btnModificar.setText("MODIFICAR");
@@ -514,12 +519,12 @@ public class Usuario_IU extends javax.swing.JInternalFrame {
 
     private void txtBuscar_apellidosFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtBuscar_apellidosFocusGained
         // TODO add your handling code here:
-        txtBuscar_apellidos.setBackground(Color.yellow);
+        txtBuscar_apellidos.setBackground(Color.CYAN);
     }//GEN-LAST:event_txtBuscar_apellidosFocusGained
 
     private void txtBuscar_apellidosFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtBuscar_apellidosFocusLost
         // TODO add your handling code here:
-        txtBuscar_apellidos.setBackground(Color.white);
+        txtBuscar_apellidos.setBackground(Color.CYAN);
     }//GEN-LAST:event_txtBuscar_apellidosFocusLost
 
     private void txtBuscar_apellidosKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscar_apellidosKeyPressed
@@ -555,7 +560,7 @@ public class Usuario_IU extends javax.swing.JInternalFrame {
 
     private void txtDniFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDniFocusGained
         // TODO add your handling code here:
-        txtDni.setBackground(Color.yellow);
+        txtDni.setBackground(Color.cyan);
     }//GEN-LAST:event_txtDniFocusGained
 
     private void txtDniFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDniFocusLost
@@ -580,7 +585,7 @@ public class Usuario_IU extends javax.swing.JInternalFrame {
 
     private void txtNombresFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNombresFocusGained
         // TODO add your handling code here:
-        txtNombres.setBackground(Color.yellow);
+        txtNombres.setBackground(Color.CYAN);
     }//GEN-LAST:event_txtNombresFocusGained
 
     private void txtNombresFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNombresFocusLost
@@ -605,7 +610,7 @@ public class Usuario_IU extends javax.swing.JInternalFrame {
 
     private void txtApellidosFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtApellidosFocusGained
         // TODO add your handling code here:
-        txtApellidos.setBackground(Color.yellow);
+        txtApellidos.setBackground(Color.CYAN);
     }//GEN-LAST:event_txtApellidosFocusGained
 
     private void txtApellidosFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtApellidosFocusLost
@@ -634,7 +639,7 @@ public class Usuario_IU extends javax.swing.JInternalFrame {
 
     private void txtDireccionFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDireccionFocusGained
         // TODO add your handling code here:
-        txtDireccion.setBackground(Color.yellow);
+        txtDireccion.setBackground(Color.CYAN);
     }//GEN-LAST:event_txtDireccionFocusGained
 
     private void txtDireccionFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDireccionFocusLost
@@ -651,7 +656,7 @@ public class Usuario_IU extends javax.swing.JInternalFrame {
 
     private void txtCelularFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCelularFocusGained
         // TODO add your handling code here:
-        txtCelular.setBackground(Color.yellow);
+        txtCelular.setBackground(Color.CYAN);
     }//GEN-LAST:event_txtCelularFocusGained
 
     private void txtCelularFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCelularFocusLost
@@ -687,7 +692,7 @@ public class Usuario_IU extends javax.swing.JInternalFrame {
 
     private void txtClaveFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtClaveFocusGained
         // TODO add your handling code here:
-        txtClave.setBackground(Color.yellow);
+        txtClave.setBackground(Color.CYAN);
     }//GEN-LAST:event_txtClaveFocusGained
 
     private void txtClaveFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtClaveFocusLost
@@ -911,6 +916,14 @@ public class Usuario_IU extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
      
     }//GEN-LAST:event_txtBuscar_apellidosActionPerformed
+
+    private void btnRegistrarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnRegistrarKeyPressed
+        // TODO add your handling code here:
+          if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER) {
+            txtNombres.requestFocus();
+        }
+        
+    }//GEN-LAST:event_btnRegistrarKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

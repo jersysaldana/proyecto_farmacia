@@ -70,7 +70,7 @@ public class Menu_IU extends javax.swing.JFrame {
         jToolBar1.add(btnProductos);
         jToolBar1.add(jSeparator1);
 
-        btnCompras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/compra.png"))); // NOI18N
+        btnCompras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENES/text_align_justity.png"))); // NOI18N
         btnCompras.setFocusable(false);
         btnCompras.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnCompras.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);

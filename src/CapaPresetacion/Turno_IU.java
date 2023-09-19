@@ -536,42 +536,42 @@ public class Turno_IU extends javax.swing.JInternalFrame {
 
     private void txtDNIFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDNIFocusGained
         // TODO add your handling code here:
-        txtDNI.setBackground(Color.yellow);
+        txtDNI.setBackground(Color.CYAN);
     }//GEN-LAST:event_txtDNIFocusGained
 
     private void txtDNIFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDNIFocusLost
         // TODO add your handling code here:
-        txtDNI.setBackground(Color.white);
+        txtDNI.setBackground(Color.CYAN);
     }//GEN-LAST:event_txtDNIFocusLost
 
     private void txtUSUARIOFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtUSUARIOFocusGained
         // TODO add your handling code here:
-        txtUSUARIO.setBackground(Color.yellow);
+        txtUSUARIO.setBackground(Color.CYAN);
     }//GEN-LAST:event_txtUSUARIOFocusGained
 
     private void txtUSUARIOFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtUSUARIOFocusLost
         // TODO add your handling code here:
-        txtUSUARIO.setBackground(Color.white);
+        txtUSUARIO.setBackground(Color.CYAN);
     }//GEN-LAST:event_txtUSUARIOFocusLost
 
     private void txtHORARIOINICIOFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtHORARIOINICIOFocusGained
         // TODO add your handling code here:
-        txtHORARIOINICIO.setBackground(Color.yellow);
+        txtHORARIOINICIO.setBackground(Color.CYAN);
     }//GEN-LAST:event_txtHORARIOINICIOFocusGained
 
     private void txtHORARIOINICIOFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtHORARIOINICIOFocusLost
         // TODO add your handling code here:
-        txtHORARIOINICIO.setBackground(Color.white);
+        txtHORARIOINICIO.setBackground(Color.CYAN);
     }//GEN-LAST:event_txtHORARIOINICIOFocusLost
 
     private void txtHORARIOFINALFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtHORARIOFINALFocusGained
         // TODO add your handling code here:
-        txtHORARIOFINAL.setBackground(Color.yellow);
+        txtHORARIOFINAL.setBackground(Color.CYAN);
     }//GEN-LAST:event_txtHORARIOFINALFocusGained
 
     private void txtHORARIOFINALFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtHORARIOFINALFocusLost
         // TODO add your handling code here:
-        txtHORARIOFINAL.setBackground(Color.yellow);
+        txtHORARIOFINAL.setBackground(Color.CYAN);
     }//GEN-LAST:event_txtHORARIOFINALFocusLost
 
     private void txtDNIKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDNIKeyTyped

@@ -132,7 +132,7 @@
         <Component class="javax.swing.JButton" name="btnCompras">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/IMAGENES/compra.png"/>
+              <Image iconType="3" name="/IMAGENES/text_align_justity.png"/>
             </Property>
             <Property name="focusable" type="boolean" value="false"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
